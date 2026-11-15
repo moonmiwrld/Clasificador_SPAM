@@ -1,0 +1,65 @@
+{
+  "nombre_modelo": "Detector de spam - SVM linear + TF-IDF",
+  "archivo_modelo": "modelo_spam_svm.pkl",
+  "modulo_preprocesamiento": "preprocesamiento.py",
+  "fecha_entrenamiento": "2026-11-14T16:09:47",
+  "entrada": "texto del mensaje (str), en inglés",
+  "uso": "modelo.predict_proba([texto])[0, 1] -> probabilidad de spam",
+  "clases": {
+    "0": "no spam",
+    "1": "spam"
+  },
+  "umbral_spam": 0.5,
+  "kernel": "linear",
+  "hiperparametros": {
+    "C": 1.0,
+    "class_weight": "balanced",
+    "gamma": "scale",
+    "ngram_range": [
+      1,
+      2
+    ]
+  },
+  "vectores_soporte": 2944,
+  "tamano_vocabulario": 30000,
+  "metricas_prueba": {
+    "accuracy": 0.9714,
+    "precision": 0.9342,
+    "recall": 0.9306,
+    "f1": 0.9324
+  },
+  "f1_validacion_cruzada": 0.9248,
+  "comparacion_cv": {
+    "SVM Lineal": {
+      "Accuracy CV": 0.9666,
+      "F1 CV": 0.9172
+    },
+    "SVM Sigmoide": {
+      "Accuracy CV": 0.9666,
+      "F1 CV": 0.9171
+    },
+    "SVM RBF": {
+      "Accuracy CV": 0.9537,
+      "F1 CV": 0.8804
+    },
+    "Árbol de Decisión": {
+      "Accuracy CV": 0.9178,
+      "F1 CV": 0.7959
+    },
+    "SVM Polinomial": {
+      "Accuracy CV": 0.8527,
+      "F1 CV": 0.4679
+    }
+  },
+  "n_registros_entrenamiento": 9792,
+  "proporcion_spam": 0.2121,
+  "semilla": 240,
+  "versiones": {
+    "python": "3.13.18",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "scipy": "1.18.1"
+  }
+}
